@@ -1,4 +1,12 @@
 <div class="panel panel-primary content">
+  <div class="panel panel-primary content">
+    <div class="panel-body">
+      <div class="row">
+        <center>
+          <h1>Gestion de CV</h1>
+          <p>Bienvenue sur le site de gestion des cv</p>
+        </center>
+      </div>
   <div class="panel-body">
     Liste des étudiants inscris
     <table class="table">
@@ -8,6 +16,10 @@
         <th>Prenom</th>
         <th>Nom</th>
         <th>Email</th>
+        <th>Adresse</th>
+        <th>Code postal</th>
+        <th>Ville</th>
+        <th>Date de naissance</th>
       </tr>
     </thead>
     <tbody class="tableauUser">
@@ -17,10 +29,14 @@
         <td><?php echo $user['prenom'];?></td>
         <td><?php echo $user['nom'];?></td>
         <td><?php echo $user['email'];?></td>
-      </tr>   
+        <td><?php echo $user['adresse_rue'];?></td>
+        <td><?php echo $user['adresse_cp'];?></td>
+        <td><?php echo $user['adresse_ville'];?></td>
+        <td><?php echo $user['date_de_naissance'];?></td>
+      </tr>
     <?php endforeach; ?>
     </tbody>
   </table>
   </div>
-  
+
 </div>

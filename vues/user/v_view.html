@@ -1,6 +1,29 @@
-<?php 
-echo "Identifiant :" .  $user[0]['identifiant']. "<br>";
-echo "Id user : " . $user[0]['id_user'] . "<br>";
-echo "Prenom : " . $user[0]['prenom'];
 
+<?php
+  $actif = "";
+if ($_SESSION['id_user'] != $_GET['id']){
+  $actif = "readonly";
+}
 ?>
+
+<form class="pure-form" method="post" action="index.php?uc=user&action=validationModification">
+<div class="row">
+  <div class="large-6 columns"><br><br><br><br><br><br><br>
+<input type="text" name="identifiant"<?php echo $actif; ?> value=" <?php echo $user[0]['identifiant'] ?> " >
+<input type="password" name="motDePasse" <?php echo $actif; ?> value=" <?php echo $user[0]['mot_de_passe'] ?> " >
+<input type="text" name="prenom" <?php echo $actif; ?> value=" <?php echo $user[0]['prenom'] ?>" >
+<input type="text" name="nom" <?php echo $actif; ?> value=" <?php echo $user[0]['nom'] ?>" >
+<input type="text" name="email" <?php echo $actif; ?> value=" <?php echo $user[0]['email'] ?>" >
+  </div>
+  <div class="large-6 columns"><br><br><br><br><br><br><br>
+  <input type="text" name="adresse_rue" <?php echo $actif; ?> value=" <?php echo $user[0]['adresse_rue'] ?>" >
+<input type="text" name="adresse_cp" <?php echo $actif; ?> value=" <?php echo $user[0]['adresse_cp'] ?>" >
+<input type="text" name="adresse_ville" <?php echo $actif; ?> value=" <?php echo $user[0]['adresse_ville'] ?>" >
+<input type="text" name="date_de_naissance" <?php echo $actif; ?> value=" <?php echo $user[0]['date_de_naissance'] ?>" >
+  </div>
+</div>
+
+<div class="row">
+<center><button type="submit" class="pure-button pure-button-primary"> Modifier </center>
+</div>
+</form>
